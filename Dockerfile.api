@@ -1,0 +1,15 @@
+FROM php:7.1-apache
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        unixodbc-dev \
+        freetds-dev \
+        libicu-dev \
+        libpq-dev && \
+    docker-php-ext-install pdo pdo_pgsql intl
+
+WORKDIR /var/www/html
+
+COPY QuickDbTest.php .
+
+CMD [ "apache2-foreground" ]
