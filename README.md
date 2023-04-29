@@ -14,4 +14,6 @@ Add the script QuickDbTest.php to the web-root folder
 
 Docker compose 3 :
 
+Run the command below 
+
 $ docker compose up
