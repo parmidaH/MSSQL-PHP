@@ -1,0 +1,11 @@
+GNU nano 7.2                                                           Dockerfile.mssql
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=Un!q@to2023
+
+WORKDIR /app
+
+COPY . .
+
+CMD [ "/opt/mssql/bin/sqlservr" ]
